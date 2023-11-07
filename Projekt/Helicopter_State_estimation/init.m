@@ -43,8 +43,8 @@ H = zeros(2,4);
 
 plant = ss(A_c, [B_c,G], C_c, 0);
 
-W = diag([7e1, 7e1, 8e1, 6e1]);
-V = diag([50, 50]);
+W = diag([7e1, 7e1, 8e1, 6e1]); %Process noice
+V = diag([50, 50]); %Meassurement noice
 
 [kalmf, L, P, M] = kalman(plant, W, V);
 

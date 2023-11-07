@@ -46,7 +46,7 @@ H = zeros(2,4);
 plant = ss(A_c, [B_c,G], C_c, 0);
 
 W = diag([7e1, 7e1, 8e1, 6e1]);
-V = diag([1, 1]);
+V = diag([0.1, 0.1]);
 
 [kalmf, L, P, M] = kalman(plant, W, V);
 
@@ -56,7 +56,7 @@ sys=ss(A_c,B_c,C_c,0);
 
 Q= diag([2.3,2.3,2.3,2.3]);
 
-R=diag([1,1]);
+R=diag([4,4]);
 
 [K,S,CLP]=lqr(sys,Q,R);
 
